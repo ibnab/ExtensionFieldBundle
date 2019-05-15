@@ -1,0 +1,5 @@
+oro:
+    customer:
+        customeruser:
+            type:
+                label: Customer Type

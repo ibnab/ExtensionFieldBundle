@@ -1,0 +1,2 @@
+bundles:
+    - { name: Ibnab\Bundle\ExtensionFieldBundle\IbnabExtensionFieldBundle , priority: 8002 }

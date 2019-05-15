@@ -1,0 +1,20 @@
+parameters:
+    ibnab_extension_field.extension.customer_type_extension.class: Ibnab\Bundle\ExtensionFieldBundle\Form\Extension\CustumerTypeExtension
+    ibnab_extension.form.type.extensionfield_select.class: Ibnab\Bundle\ExtensionFieldBundle\Form\Type\CustomerTypeSelectType
+    ibnab_extension_field.extension.frontend_customer_type_extension.class: Ibnab\Bundle\ExtensionFieldBundle\Form\Extension\FrontendCustumerTypeExtension
+
+services:
+    ibnab_extension_field.extension.customer_type_extension:
+        class: %ibnab_extension_field.extension.customer_type_extension.class%
+
+        tags:
+            - { name: form.type_extension, extended_type: 'Oro\Bundle\CustomerBundle\Form\Type\CustomerUserType' }
+    ibnab_extension_field.extension.frontned_customer_type_extension:
+        class: %ibnab_extension_field.extension.frontend_customer_type_extension.class%
+        tags:
+            - { name: form.type_extension, extended_type: 'Oro\Bundle\CustomerBundle\Form\Type\FrontendCustomerUserRegistrationType' }
+            
+    ibnab_extension.form.type.extensionfield_select:
+        class: '%ibnab_extension.form.type.extensionfield_select.class%'
+        tags:
+            - { name: form.type, alias: "ibnab_extensionfield_select" }
